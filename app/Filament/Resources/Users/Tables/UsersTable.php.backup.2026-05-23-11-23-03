@@ -16,25 +16,20 @@ class UsersTable
         return $table
             ->columns([
                 TextColumn::make('name')
-                    ->label(__('filament/admin/user_resource.name'))
                     ->searchable(),
                 TextColumn::make('email')
-                    ->label(__('filament/admin/user_resource.email'))
+                    ->label('Email address')
                     ->searchable(),
                 TextColumn::make('email_verified_at')
-                    ->label(__('filament/admin/user_resource.email_verified_at'))
                     ->dateTime()
                     ->sortable(),
                 TextColumn::make('role')
-                    ->label(__('filament/admin/user_resource.role'))
                     ->searchable(),
                 TextColumn::make('created_at')
-                    ->label(__('filament/admin/user_resource.created_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
-                    ->label(__('filament/admin/user_resource.updated_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

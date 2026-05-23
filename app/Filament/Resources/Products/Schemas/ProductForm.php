@@ -14,13 +14,17 @@ class ProductForm
         return $schema
             ->components([
                 TextInput::make('title')
+                    ->label(__('filament/admin/product_resource.title'))
                     ->required(),
                 Textarea::make('description')
+                    ->label(__('filament/admin/product_resource.description'))
                     ->required(),
                 TextInput::make('price')
+                    ->label(__('filament/admin/product_resource.price'))
                     ->numeric()
                     ->inputMode('decimal'),
                 FileUpload::make('picture')
+                    ->label(__('filament/admin/product_resource.picture'))
                     ->image()
                     ->imageEditor(),
             ]);

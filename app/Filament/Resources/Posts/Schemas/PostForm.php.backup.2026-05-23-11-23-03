@@ -14,13 +14,10 @@ class PostForm
         return $schema
             ->components([
                 TextInput::make('title')
-                    ->label(__('filament/admin/post_resource.title'))
                     ->required(),
                 Textarea::make('description')
-                    ->label(__('filament/admin/post_resource.description'))
                     ->required(),
                 FileUpload::make('picture')
-                    ->label(__('filament/admin/post_resource.picture'))
                     ->image()
                     ->imageEditor(),
             ]);

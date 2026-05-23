@@ -19,20 +19,24 @@ class ProductsTable
         return $table
             ->columns([
                 TextColumn::make('title')
+                    ->label(__('filament/admin/product_resource.title'))
                     ->searchable(),
                 TextColumn::make('description')
-                    ->label('Description'),
+                    ->label(__('filament/admin/product_resource.description')),
                 TextColumn::make('price')
-                    ->label('price'),
+                    ->label(__('filament/admin/product_resource.price')),
                 TextColumn::make('created_at')
+                    ->label(__('filament/admin/product_resource.created_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label(__('filament/admin/product_resource.updated_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 ImageColumn::make('picture')
+                    ->label(__('filament/admin/product_resource.picture'))
                     ->circular(),
             ])
             ->filters([

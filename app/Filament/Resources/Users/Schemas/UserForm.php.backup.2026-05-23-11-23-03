@@ -13,20 +13,16 @@ class UserForm
         return $schema
             ->components([
                 TextInput::make('name')
-                    ->label(__('filament/admin/user_resource.name'))
                     ->required(),
                 TextInput::make('email')
-                    ->label(__('filament/admin/user_resource.email'))
+                    ->label('Email address')
                     ->email()
                     ->required(),
-                DateTimePicker::make('email_verified_at')
-                    ->label(__('filament/admin/user_resource.email_verified_at')),
+                DateTimePicker::make('email_verified_at'),
                 TextInput::make('password')
-                    ->label(__('filament/admin/user_resource.password'))
                     ->password()
                     ->required(),
                 TextInput::make('role')
-                    ->label(__('filament/admin/user_resource.role'))
                     ->required()
                     ->default('user'),
             ]);

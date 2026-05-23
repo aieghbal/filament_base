@@ -20,14 +20,4 @@ class EditProduct extends EditRecord
             RestoreAction::make(),
         ];
     }
-    public function getTitle(): string
-    {
-        return __('filament/admin/edit_product.title');
-    }
-
-    public static function getNavigationLabel(): string
-    {
-        return __('filament/admin/edit_product.title');
-    }
-
 }

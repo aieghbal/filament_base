@@ -1,46 +1,41 @@
 <?php
 
-namespace App\Filament\Resources\Users\Tables;
+namespace App\Filament\Resources\Posts\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Actions\ForceDeleteBulkAction;
+use Filament\Actions\RestoreBulkAction;
+use Filament\Forms\Components\Textarea;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\TrashedFilter;
 use Filament\Tables\Table;
 
-class UsersTable
+class PostsTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('name')
-                    ->label(__('filament/admin/user_resource.name'))
+                TextColumn::make('title')
                     ->searchable(),
-                TextColumn::make('email')
-                    ->label(__('filament/admin/user_resource.email'))
-                    ->searchable(),
-                TextColumn::make('email_verified_at')
-                    ->label(__('filament/admin/user_resource.email_verified_at'))
-                    ->dateTime()
-                    ->sortable(),
-                TextColumn::make('role')
-                    ->label(__('filament/admin/user_resource.role'))
-                    ->searchable(),
+                TextColumn::make('description')
+                    ->label('Description'),
                 TextColumn::make('created_at')
-                    ->label(__('filament/admin/user_resource.created_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
-                    ->label(__('filament/admin/user_resource.updated_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+                ImageColumn::make('picture')
+                    ->circular(),
             ])
             ->filters([
-                //
+                TrashedFilter::make(),
             ])
             ->recordActions([
                 EditAction::make(),
@@ -48,6 +43,8 @@ class UsersTable
             ->toolbarActions([
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
+                    ForceDeleteBulkAction::make(),
+                    RestoreBulkAction::make(),
                 ]),
             ]);
     }

@@ -20,18 +20,22 @@ class PostsTable
         return $table
             ->columns([
                 TextColumn::make('title')
+                    ->label(__('filament/admin/post_resource.title'))
                     ->searchable(),
                 TextColumn::make('description')
-                    ->label('Description'),
+                    ->label(__('filament/admin/post_resource.description')),
                 TextColumn::make('created_at')
+                    ->label(__('filament/admin/post_resource.created_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('updated_at')
+                    ->label(__('filament/admin/post_resource.updated_at'))
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 ImageColumn::make('picture')
+                    ->label(__('filament/admin/post_resource.picture'))
                     ->circular(),
             ])
             ->filters([
