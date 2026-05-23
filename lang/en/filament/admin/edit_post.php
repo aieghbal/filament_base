@@ -2,7 +2,7 @@
 
 return [
 
-    'navigation_label' => 'ویرایش پست',
+    'navigation_label' => 'Edit Post',
     'title' => 'Edit Post',
 
 ];

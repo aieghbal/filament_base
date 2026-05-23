@@ -2,7 +2,7 @@
 
 return [
 
-    'navigation_label' => 'Edit Product',
-    'title' => 'Edit Product',
+    'navigation_label' => 'ویرایش محصول',
+    'title' => 'ویرایش محصول',
 
 ];
